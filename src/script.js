@@ -135,3 +135,11 @@ if (typeof ScrollReveal !== "undefined") {
   sr.reveal(".contact__input", { delay: 200 });
   sr.reveal(".contact__button", { delay: 200 });
 }
+
+/*===== PRELOADER =====*/
+window.addEventListener("load", function () {
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    preloader.style.display = "none";
+  }
+});
