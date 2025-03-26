@@ -246,16 +246,6 @@ img {
   row-gap: 5rem;
 }
 
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-25px);
-  }
-}
-
 .home__title {
   align-self: flex-end;
   font-size: var(--big-font-size);
