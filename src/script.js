@@ -1,3 +1,7 @@
+const serviceID = "service_79q41qw";
+const templateID = "template_6qrlm0n";
+const publicKey = "-Q7GRfV-9x928wvce";
+
 /*===== MENU SHOW =====*/
 const showMenu = (toggleId, navId) => {
   const toggle = document.getElementById(toggleId),
@@ -20,6 +24,34 @@ function linkAction() {
 }
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
+/*===== EMAIL JS =====*/
+emailjs.init(publicKey);
+
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const formData = {
+      name: this.name.value,
+      email: this.email.value,
+      message: this.message.value,
+    };
+
+    emailjs
+      .send(serviceID, templateID, formData)
+      .then((response) => {
+        document.getElementById("status-message").textContent =
+          "Message sent successfully!";
+        this.reset();
+      })
+      .catch((error) => {
+        document.getElementById("status-message").textContent =
+          "Failed to send message.";
+        console.error("EmailJS Error:", error);
+      });
+  });
+
 /*===== SCROLL SECTIONS ACTIVE LINK =====*/
 const sections = document.querySelectorAll("section[id]");
 
@@ -31,7 +63,7 @@ function scrollActive() {
   sections.forEach((current) => {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 50;
-    sectionId = current.getAttribute("id");
+    const sectionId = current.getAttribute("id");
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
       document
@@ -50,7 +82,7 @@ const sr = ScrollReveal({
   origin: "top",
   distance: "80px",
   duration: 2000,
-  reset: true,
+  reset: false,
 });
 
 /*SCROLL HOME*/

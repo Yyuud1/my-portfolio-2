@@ -223,22 +223,17 @@
             <span class="contact__text">Jambi, Indonesia</span>
           </div>
 
-          <form action="" class="contact__form">
-            <div class="contact__inputs">
-              <input type="text" placeholder="Name" class="contact__input" />
-              <input type="mail" placeholder="Email" class="contact__input" />
-            </div>
-
+          <form id="contact-form" class="contact__input">
+            <input type="text" id="name" placeholder="Your Name" required />
+            <input type="email" id="email" placeholder="Your Email" required />
             <textarea
-              name=""
-              id=""
-              cols="0"
-              rows="10"
-              class="contact__input"
+              id="message"
+              placeholder="Your Message"
+              required
             ></textarea>
-
-            <input type="submit" value="Send" class="contact__button" />
+            <button type="submit">Send</button>
           </form>
+          <p id="status-message"></p>
         </div>
       </section>
     </main>
@@ -273,6 +268,7 @@
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="src/script.js"></script>
   </body>
