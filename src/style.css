@@ -397,9 +397,6 @@ img {
 }
 
 /* ===== PORTFOLIO =====*/
-.portfolio {
-  background-color: var(--white-color);
-}
 .portfolio__container {
   justify-items: center;
   row-gap: 2rem;
@@ -442,8 +439,7 @@ img {
   margin: auto;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: var(--shadow);
-  background: var(--bg-color);
+  background: #fff;
 }
 
 #contact-form input,
@@ -515,6 +511,7 @@ img {
     width: 230px;
   }
   #contact-form {
+    margin-top: 1rem;
     max-width: 95%;
   }
 
