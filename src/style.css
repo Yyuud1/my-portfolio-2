@@ -182,6 +182,11 @@ img {
     backdrop-filter: blur(10px);
   }
 
+  .home__img {
+    right: 30%;
+    transform: translateX(30%);
+  }
+
   #contact-form {
     max-width: 90%;
     padding: 15px;
