@@ -40,18 +40,27 @@ document
   .addEventListener("submit", function (event) {
     event.preventDefault();
 
+    const submitButton = this.querySelector("button[type='submit']");
+    const originalButtonText = submitButton.innerHTML;
+
+    submitButton.disabled = true;
+    submitButton.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Sending...`;
+
     const name = this.name.value.trim();
     const email = this.email.value.trim();
     const message = this.message.value.trim();
 
     if (!name || !email || !message) {
       Swal.fire({
-        toast: "true",
+        toast: true,
         position: "top-end",
         icon: "warning",
         title: "Oops...",
         text: "Please fill out the form before pressing the send button.",
       });
+
+      submitButton.disabled = false;
+      submitButton.innerHTML = originalButtonText;
       return;
     }
 
@@ -61,17 +70,18 @@ document
       .send(serviceID, templateID, formData)
       .then(() => {
         Swal.fire({
-          toast: "true",
+          toast: true,
           position: "top-end",
           icon: "success",
           title: "Success!",
           text: "Message sent successfully!",
         });
+
         this.reset();
       })
       .catch((error) => {
         Swal.fire({
-          toast: "true",
+          toast: true,
           position: "top-end",
           icon: "error",
           title: "Failed!",
@@ -79,6 +89,10 @@ document
           footer: `<small>Error: ${error.text}</small>`,
         });
         console.error("EmailJS Error:", error);
+      })
+      .finally(() => {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonText;
       });
   });
 
