@@ -47,7 +47,19 @@
   --z-fixed: 100;
 }
 
-/*===== LOADER=====*/
+/*===== PROGRESS BAR =====*/
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background-color: var(--white-color);
+  z-index: 9999;
+  transition: width 0.2s ease-out;
+}
+
+/*===== LOADER =====*/
 #preloader {
   position: fixed;
   width: 100%;
@@ -78,11 +90,13 @@
   0% {
     transform: rotate(0deg);
   }
+  50% {
+    transform: rotate(180deg);
+  }
   100% {
     transform: rotate(360deg);
   }
 }
-
 /*===== BASE =====*/
 *,
 ::before,
@@ -276,9 +290,11 @@ img {
   0%,
   100% {
     transform: translateY(0);
+    animation-timing-function: ease-in-out;
   }
   50% {
-    transform: translateY(-25px);
+    transform: translateY(-20px);
+    animation-timing-function: ease-in-out;
   }
 }
 
