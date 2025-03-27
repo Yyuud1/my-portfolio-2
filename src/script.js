@@ -148,6 +148,9 @@ if (typeof ScrollReveal !== "undefined") {
 window.addEventListener("load", function () {
   const preloader = document.getElementById("preloader");
   if (preloader) {
-    preloader.style.display = "none";
+    preloader.classList.add("hidden");
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 500);
   }
 });
