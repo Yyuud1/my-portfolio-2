@@ -8,11 +8,19 @@ const showMenu = (toggleId, navId) => {
     nav = document.getElementById(navId);
 
   if (toggle && nav) {
-    toggle.addEventListener("click", () => {
+    toggle.addEventListener("click", (event) => {
       nav.classList.toggle("show");
+      event.stopPropagation();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+        nav.classList.remove("show");
+      }
     });
   }
 };
+
 showMenu("nav-toggle", "nav-menu");
 
 /*===== REMOVE MENU MOBILE =====*/
