@@ -192,13 +192,12 @@ document.addEventListener("DOMContentLoaded", () => {
     loop: true,
     spaceBetween: 40,
     grabCursor: true,
-    slidesPerView: 2,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
     },
     autoplay: {
-      delay: 2500,
+      delay: 3000,
       disableOnInteraction: false,
     },
   });
