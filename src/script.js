@@ -202,6 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   setupExperienceFilter();
+  setupCertificateZoomTab();
 });
 
 /*===== EXPERIENCE FILTER =====*/
@@ -223,6 +224,16 @@ function setupExperienceFilter() {
       work.style.display = selected === "work" ? "block" : "none";
       academic.style.display = selected === "academic" ? "block" : "none";
       certificate.style.display = selected === "certificate" ? "flex" : "none";
+    });
+  });
+}
+
+function setupCertificateZoomTab() {
+  const images = document.querySelectorAll(".certificate-gallery img");
+  images.forEach((img) => {
+    img.style.cursor = "pointer";
+    img.addEventListener("click", () => {
+      window.open(img.src, "_blank");
     });
   });
 }
