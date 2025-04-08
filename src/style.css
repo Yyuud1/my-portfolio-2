@@ -548,6 +548,7 @@ img {
   width: 300px;
   border-radius: 10px;
   object-fit: cover;
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
@@ -714,6 +715,18 @@ img {
   }
   .timeline-dot {
     left: 0;
+  }
+
+  .timeline-date {
+    font-size: 14px;
+  }
+
+  .timeline-content h3 {
+    font-size: 17px;
+  }
+
+  .timeline-content p {
+    font-size: 15px;
   }
 
   .filter-btn {
