@@ -151,6 +151,9 @@ if (typeof ScrollReveal !== "undefined") {
   /*SCROLL PORTFOLIO*/
   sr.reveal(".portfolio__img", { interval: 200 });
 
+  /*SCROLL TESTIMONIALS*/
+  sr.reveal(".testimonial__card", { interval: 200 });
+
   /*SCROLL CONTACT*/
   sr.reveal(".contact__subtitle", {});
   sr.reveal(".contact__text", { interval: 200 });
@@ -182,3 +185,21 @@ function updateProgressBar() {
   let scrollPercentage = (scrollTop / scrollHeight) * 100;
   document.getElementById("progress-bar").style.width = scrollPercentage + "%";
 }
+
+// SWIPER
+document.addEventListener("DOMContentLoaded", () => {
+  new Swiper(".testimonials__container", {
+    loop: true,
+    spaceBetween: 40,
+    grabCursor: true,
+    slidesPerView: 2,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+  });
+});

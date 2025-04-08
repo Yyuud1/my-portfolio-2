@@ -36,6 +36,12 @@
     <!-- STYLE -->
     <link rel="stylesheet" href="src/style.css" />
 
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+
     <!-- ICON -->
     <link
       href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
@@ -73,6 +79,9 @@
             </li>
             <li class="nav__item">
               <a href="#portfolio" class="nav__link">Project</a>
+            </li>
+            <li class="nav__item">
+              <a href="#testimonials" class="nav__link">Testi</a>
             </li>
             <li class="nav__item">
               <a href="#contact" class="nav__link">Contact</a>
@@ -247,6 +256,75 @@
         </div>
       </section>
 
+      <!--===== TESTIMONIALS =====-->
+      <section class="testimonials section" id="testimonials">
+        <h2 class="section-title">Testi<span>monials.</span></h2>
+        <div class="swiper testimonials__container bd-grid">
+          <div class="swiper-wrapper">
+            <div class="testimonial__card swiper-slide">
+              <div class="testimonial__author">
+                <img
+                  src="https://i.pravatar.cc/150?img=41"
+                  alt="testimonial"
+                  class="testimonial__img"
+                />
+                <div>
+                  <h3 class="testimonial__name">Tiara Dewangga</h3>
+                  <span class="testimonial__role">Mentor Kampus Merdeka</span>
+                </div>
+              </div>
+              <p class="testimonial__text">
+                "Yuda sangat berdedikasi dan cepat belajar. Selama program
+                Kampus Merdeka, dia jadi pilar tim front-end."
+              </p>
+            </div>
+            <div class="testimonial__card swiper-slide">
+              <div class="testimonial__author">
+                <img
+                  src="https://i.pravatar.cc/150?img=2"
+                  alt="testimonial"
+                  class="testimonial__img"
+                />
+                <div>
+                  <h3 class="testimonial__name">Mesa Arni, ST, M.Si</h3>
+                  <span class="testimonial__role"
+                    >Kasubbag Umum & Kepegawaian DPUPR Kota Jambi</span
+                  >
+                </div>
+              </div>
+              <p class="testimonial__text">
+                "Kontribusi yang besar diberikan oleh yuda. Teliti,
+                ter-organisir, cepat tanggap dalam sebuah pekerjaan yang
+                diamanahkan."
+              </p>
+            </div>
+            <div class="testimonial__card swiper-slide">
+              <div class="testimonial__author">
+                <img
+                  src="https://i.pravatar.cc/150?img=60"
+                  alt="testimonial"
+                  class="testimonial__img"
+                />
+                <div>
+                  <h3 class="testimonial__name">Aldine Ferdinand, S.Kom</h3>
+                  <span class="testimonial__role"
+                    >Staf Senior DPUPR Kota Jambi</span
+                  >
+                </div>
+              </div>
+              <p class="testimonial__text">
+                "Support-nya di DPUPR sangat membantu. Cepat tanggap dan sangat
+                memahami hardware maupun software."
+              </p>
+            </div>
+          </div>
+          <br /><br />
+
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
       <!--===== CONTACT =====-->
       <section class="contact section" id="contact">
         <h2 class="section-title">Get <span>in Touch.</span></h2>
@@ -296,10 +374,18 @@
         <div class="footer__data">
           <h2 class="footer__title">FOLLOW</h2>
           <a href="#" class="footer__social"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="footer__social"
+          <a
+            href="https://www.instagram.com/yudagrh_/"
+            target="_blank"
+            class="footer__social"
             ><i class="bx bxl-instagram"></i
           ></a>
-          <a href="#" class="footer__social"><i class="bx bxl-linkedin"></i></a>
+          <a
+            href="https://www.linkedin.com/in/yuda-anugrah-6314bb24b"
+            target="_blank"
+            class="footer__social"
+            ><i class="bx bxl-linkedin"></i
+          ></a>
         </div>
       </div>
     </footer>
@@ -307,6 +393,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="src/script.js"></script>
   </body>
 </html>
