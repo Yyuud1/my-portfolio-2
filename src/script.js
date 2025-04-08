@@ -190,7 +190,7 @@ function updateProgressBar() {
 document.addEventListener("DOMContentLoaded", () => {
   new Swiper(".testimonials__container", {
     loop: true,
-    spaceBetween: 40,
+    spaceBetween: 35,
     grabCursor: true,
     pagination: {
       el: ".swiper-pagination",
