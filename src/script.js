@@ -151,6 +151,9 @@ if (typeof ScrollReveal !== "undefined") {
   /*SCROLL PORTFOLIO*/
   sr.reveal(".portfolio__img", { interval: 200 });
 
+  /*SCROLL EXPERINCE*/
+  sr.reveal(".category-work", { interval: 200 });
+
   /*SCROLL TESTIMONIALS*/
   sr.reveal(".testimonial__card", { interval: 200 });
 
@@ -197,4 +200,29 @@ document.addEventListener("DOMContentLoaded", () => {
       clickable: true,
     },
   });
+
+  setupExperienceFilter();
 });
+
+/*===== EXPERIENCE FILTER =====*/
+function setupExperienceFilter() {
+  const buttons = document.querySelectorAll(".filter-btn");
+  const work = document.querySelector(".category-work");
+  const academic = document.querySelector(".category-academic");
+  const certificate = document.querySelector(".category-certificate");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Toggle active class on buttons
+      buttons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const selected = btn.getAttribute("data-category");
+
+      // Tampilkan sesuai kategori
+      work.style.display = selected === "work" ? "block" : "none";
+      academic.style.display = selected === "academic" ? "block" : "none";
+      certificate.style.display = selected === "certificate" ? "flex" : "none";
+    });
+  });
+}
