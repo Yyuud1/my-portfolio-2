@@ -269,6 +269,22 @@ img {
   overflow: hidden;
 }
 
+.home::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 25%;
+  background: linear-gradient(
+    0deg,
+    rgb(240, 240, 241) 3%,
+    rgba(228, 222, 222, 0) 25%
+  );
+}
+
 .home__container {
   height: calc(100vh - var(--header-height));
   row-gap: 5rem;
@@ -304,18 +320,22 @@ img {
   color: var(--white-color);
   line-height: 0.8;
 }
+
 .home__title span {
   text-shadow: 0 20px 25px rgba(0, 0, 0, 0.5);
 }
+
 .home__scroll {
   align-self: flex-end;
-  padding-bottom: var(--mb-4);
+  padding-bottom: 3rem;
 }
+
 .home__scroll-link {
   writing-mode: vertical-lr;
   transform: rotate(-180deg);
   color: var(--white-color);
 }
+
 .home__img {
   position: absolute;
   right: 0;
