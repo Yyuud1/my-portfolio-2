@@ -142,6 +142,7 @@ if (typeof ScrollReveal !== "undefined") {
   sr.reveal(".about__profession", { delay: 300 });
   sr.reveal(".about__text", { delay: 300 });
   sr.reveal(".about__social-icon", { delay: 300, interval: 300 });
+  sr.reveal(".about__social-button", { delay: 300, interval: 300 });
 
   /*SCROLL SKILLS*/
   sr.reveal(".skills__subtitle", {});

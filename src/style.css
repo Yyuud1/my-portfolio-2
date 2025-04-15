@@ -382,6 +382,12 @@ img {
   margin-bottom: var(--mb-4);
 }
 
+.about__social {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .about__social-icon {
   font-size: 1.4rem;
   margin: 0 var(--mb-1);
@@ -421,8 +427,24 @@ img {
   background-color: var(--first-color);
   color: var(--white-color);
 }
-.skills__img img {
-  border-radius: 0.5rem;
+.skills__img {
+  position: relative;
+  justify-self: center;
+}
+
+.skills__img .skills__img-1 {
+  width: 450px;
+  margin-left: 3.5rem;
+  border-radius: 8px;
+}
+
+.skills__img .skills__img-2 {
+  width: 300px;
+  border: 6px solid var(--bg-color);
+  position: absolute;
+  left: 0;
+  bottom: -5.5rem;
+  border-radius: 8px;
 }
 
 /* ===== PORTFOLIO =====*/
@@ -733,6 +755,18 @@ img {
 @media screen and (max-width: 500px) {
   .home__img {
     width: 230px;
+  }
+
+  .about__social-button {
+    margin-top: 2rem;
+  }
+
+  .skills__img .skills__img-1 {
+    width: 240px;
+  }
+
+  .skills__img .skills__img-2 {
+    width: 200px;
   }
 
   .timeline-items::before {
