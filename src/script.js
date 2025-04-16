@@ -238,3 +238,34 @@ function setupCertificateZoomTab() {
     });
   });
 }
+
+// Dark Mode Functionality
+const darkModeToggle = document.querySelector(".dark-mode-toggle");
+
+// Check for saved user preference
+if (localStorage.getItem("darkMode") === "enabled") {
+  document.body.classList.add("dark-mode");
+  darkModeToggle.innerHTML = '<i class="bx bx-sun"></i>';
+}
+
+// Toggle Function
+darkModeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("darkMode", "enabled");
+    darkModeToggle.innerHTML = '<i class="bx bx-sun"></i>';
+  } else {
+    localStorage.setItem("darkMode", "disabled");
+    darkModeToggle.innerHTML = '<i class="bx bx-moon"></i>';
+  }
+});
+
+if (
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches &&
+  !localStorage.getItem("darkMode")
+) {
+  document.body.classList.add("dark-mode");
+  darkModeToggle.innerHTML = '<i class="bx bx-sun"></i>';
+}

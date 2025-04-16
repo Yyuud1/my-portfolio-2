@@ -9,6 +9,9 @@
 :root {
   --first-color: royalblue;
   --bg-color: #eff0f4;
+  --bg-dark: #1a1a2e;
+  --text-dark: #e6e6e6;
+  --shadow-dark: 3px 3px 3px #0d0d15, -3px -3px 3px #272747;
   --white-color: #fafaff;
   --dark-color: #2a3b47;
   --text-color: #697477;
@@ -129,6 +132,61 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/*===== DARK MODE ===== */
+.dark-mode-toggle {
+  color: var(--white-color);
+}
+
+.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.dark-mode .home::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 5%;
+  background: linear-gradient(
+    0deg,
+    var(--bg-dark) 10%,
+    rgba(10, 10, 20, 0.5) 20%,
+    rgba(10, 10, 20, 0)
+  );
+}
+
+.dark-mode .about__social-icon {
+  box-shadow: var(--shadow-dark);
+  color: #ddd;
+}
+
+.dark-mode .section-title,
+.dark-mode .about__subtitle,
+.dark-mode .timeline-content h3,
+.dark-mode .timeline-content p {
+  color: var(--text-dark);
+}
+
+.dark-mode .timeline-date {
+  color: var(--white-color);
+}
+
+.dark-mode .skills__name,
+.dark-mode .filter-btn {
+  color: var(--dark-color);
+  box-shadow: var(--shadow-dark);
+}
+
+/* Style toggle button */
+.dark-mode-toggle {
+  cursor: pointer;
+  font-size: 1.5rem;
 }
 
 /*===== CLASS CSS ===== */
