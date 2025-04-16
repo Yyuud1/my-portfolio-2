@@ -382,12 +382,6 @@ img {
   margin-bottom: var(--mb-4);
 }
 
-.about__social {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
 .about__social-icon {
   font-size: 1.4rem;
   margin: 0 var(--mb-1);
@@ -755,10 +749,6 @@ img {
 @media screen and (max-width: 500px) {
   .home__img {
     width: 230px;
-  }
-
-  .about__social-button {
-    margin-top: 2rem;
   }
 
   .skills__img .skills__img-1 {
