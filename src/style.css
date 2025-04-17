@@ -1014,13 +1014,17 @@ img {
   .nav__item-right .dark-mode-toggle:nth-child(1) {
     position: absolute;
     top: 5px;
-    right: 14%;
+    right: 13%;
   }
 
   .nav__item-right .dark-mode-toggle:nth-child(2) {
     position: absolute;
     top: 5px;
-    right: 25%;
+    right: 22%;
+  }
+
+  .dark-mode-toggle i {
+    font-size: 1.2rem;
   }
 
   .home__img {
