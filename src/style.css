@@ -885,6 +885,7 @@ img {
 @media screen and (max-width: 500px) {
   #goToHomeBtn {
     right: 20px;
+    bottom: 20px;
   }
 
   .home__img {
