@@ -190,6 +190,37 @@ function updateProgressBar() {
   document.getElementById("progress-bar").style.width = scrollPercentage + "%";
 }
 
+// Fungsi untuk menampilkan/menyembunyikan tombol Go to Home
+function toggleGoToHomeButton() {
+  const goToHomeBtn = document.getElementById("goToHomeBtn");
+  if (window.scrollY > 300) {
+    goToHomeBtn.classList.add("show");
+  } else {
+    goToHomeBtn.classList.remove("show");
+  }
+}
+
+/*===== GO TO HOME BUTTON =====*/
+function toggleGoToHomeButton() {
+  const goToHomeBtn = document.getElementById("goToHomeBtn");
+  if (window.scrollY > 300) {
+    goToHomeBtn.classList.add("show");
+  } else {
+    goToHomeBtn.classList.remove("show");
+  }
+}
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+window.addEventListener("scroll", toggleGoToHomeButton);
+
+document.getElementById("goToHomeBtn").addEventListener("click", scrollToTop);
+
 // SWIPER
 document.addEventListener("DOMContentLoaded", () => {
   new Swiper(".testimonials__container", {

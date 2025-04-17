@@ -137,14 +137,54 @@ img {
   display: block;
 }
 
+/* Go to Home */
+#goToHomeBtn {
+  position: fixed;
+  bottom: 60px;
+  right: 100px;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#goToHomeBtn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#goToHomeBtn:hover {
+  background-color: #3498db;
+  transform: translateY(-5px);
+}
+
 /*===== DARK MODE ===== */
 .dark-mode-toggle {
+  cursor: pointer;
+  font-size: 1.5rem;
   color: var(--white-color);
 }
 
 .dark-mode {
   background-color: var(--bg-dark);
   color: var(--text-dark);
+}
+
+.dark-mode #goToHomeBtn {
+  background: var(--dark-color);
+  box-shadow: var(--shadow-dark);
 }
 
 .dark-mode .l-header {
@@ -201,11 +241,6 @@ img {
 .dark-mode #contact-form {
   background: var(--bg-dark);
   box-shadow: var(--shadow-dark);
-}
-
-.dark-mode-toggle {
-  cursor: pointer;
-  font-size: 1.5rem;
 }
 
 .section-title,
@@ -848,6 +883,10 @@ img {
 /* ===== MEDIA QUERIES =====*/
 /* small devices */
 @media screen and (max-width: 500px) {
+  #goToHomeBtn {
+    right: 20px;
+  }
+
   .home__img {
     width: 230px;
   }
