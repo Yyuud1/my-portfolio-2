@@ -318,6 +318,12 @@ img {
   align-items: center;
 }
 
+.nav .nav__item-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
 @media screen and (max-width: 768px) {
   .nav__menu {
     position: fixed;
@@ -1003,6 +1009,18 @@ img {
   #goToHomeBtn {
     right: 20px;
     bottom: 20px;
+  }
+
+  .nav__item-right .dark-mode-toggle:nth-child(1) {
+    position: absolute;
+    top: 5px;
+    right: 14%;
+  }
+
+  .nav__item-right .dark-mode-toggle:nth-child(2) {
+    position: absolute;
+    top: 5px;
+    right: 25%;
   }
 
   .home__img {

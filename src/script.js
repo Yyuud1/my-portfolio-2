@@ -252,7 +252,6 @@ function setupExperienceFilter() {
 
       const selected = btn.getAttribute("data-category");
 
-      // Tampilkan sesuai kategori
       work.style.display = selected === "work" ? "block" : "none";
       academic.style.display = selected === "academic" ? "block" : "none";
       certificate.style.display = selected === "certificate" ? "flex" : "none";
@@ -270,16 +269,14 @@ function setupCertificateZoomTab() {
   });
 }
 
-// Dark Mode Functionality
+/*===== DARK MODE =====*/
 const darkModeToggle = document.querySelector(".dark-mode-toggle");
 
-// Check for saved user preference
 if (localStorage.getItem("darkMode") === "enabled") {
   document.body.classList.add("dark-mode");
   darkModeToggle.innerHTML = '<i class="bx bx-sun"></i>';
 }
 
-// Toggle Function
 darkModeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 
@@ -300,3 +297,17 @@ if (
   document.body.classList.add("dark-mode");
   darkModeToggle.innerHTML = '<i class="bx bx-sun"></i>';
 }
+
+// Music Toggle Functionality
+const musicToggle = document.getElementById("musicToggle");
+const backgroundMusic = document.getElementById("backgroundMusic");
+
+musicToggle.addEventListener("click", () => {
+  if (backgroundMusic.paused) {
+    backgroundMusic.play();
+    musicToggle.innerHTML = '<i class="bx bx-pause"></i>';
+  } else {
+    backgroundMusic.pause();
+    musicToggle.innerHTML = '<i class="bx bx-music"></i>';
+  }
+});
