@@ -593,25 +593,138 @@ img {
   height: 300px;
 }
 
-.portfolio__link {
+.card__bg,
+.card__blur {
   position: absolute;
-  bottom: -100%;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 0.5rem;
+}
+
+.card__bg {
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__blur {
+  backdrop-filter: blur(24px);
+}
+
+.card__article {
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.card__img {
+  display: block;
+  width: 400px;
+  height: 300px;
+  border-radius: 8px;
+  transition: transform 0.4s;
+}
+
+.card__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 0%, 0) 70%,
+    hsl(0, 0%, 0%) 100%
+  );
+}
+
+.card__data {
+  color: var(--white-color);
+  position: absolute;
+  left: 1.5rem;
+  bottom: 2rem;
+}
+
+.card__name {
+  font-size: var(--big-font-size);
+  margin-bottom: 0.25rem;
+}
+
+.card__profession {
+  display: block;
+  font-size: var(--small-font-size);
+}
+
+.card__clip {
+  position: absolute;
+  top: 0.7rem;
+  right: 1.5rem;
+  background: var(--dark-color);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  color: var(--white-color);
+  z-index: 5;
   cursor: pointer;
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
+  transition: transform 0.4s;
 }
-.portfolio__img:hover .portfolio__link {
-  bottom: 0;
+
+.card__article:hover .card__img {
+  transform: scale(1.1);
 }
-.portfolio__link-name {
+
+/*=============== CARD PROJECT INFO ===============*/
+.info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 0%, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 3rem 1.5rem 1.5rem;
+  color: var(--white-color);
+  clip-path: circle(8px at 88% 9%);
+  transition: clip-path 0.5s ease-in-out;
+}
+
+.info__name {
+  font-size: var(--biggest-font-size);
+  margin-bottom: 0.5rem;
+  text-shadow: 0.5px 0.5px 0.5px #000;
+}
+
+.info__description {
+  font-size: var(--small-font-size);
+  margin-bottom: 1rem;
+  text-shadow: 0 0.2px 1px #000;
+}
+
+.info__button {
+  display: inline-flex;
+  background-color: var(--bg-color);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
   color: var(--dark-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  transition: box-shadow 0.4s;
+}
+
+.info__button:hover {
+  box-shadow: 0 0 20px hsl(var(--hue), 90%, 50%);
+}
+
+.card__article:hover .card__clip {
+  transform: rotate(-45deg);
+}
+
+.info:hover,
+.card__clip:hover ~ .info {
+  clip-path: circle(100%);
 }
 
 /* ===== EXPERIENCE =====*/
