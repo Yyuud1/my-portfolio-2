@@ -539,13 +539,21 @@ img {
   justify-items: center;
   row-gap: 2rem;
 }
+
 .portfolio__img {
   position: relative;
   overflow: hidden;
 }
+
 .portfolio__img img {
   border-radius: 0.5rem;
 }
+
+.portfolio__img img {
+  width: 400px;
+  height: 300px;
+}
+
 .portfolio__link {
   position: absolute;
   bottom: -100%;
@@ -893,6 +901,10 @@ img {
 
   .testimonial__card {
     box-shadow: none;
+  }
+
+  .portfolio .section-title {
+    margin-top: 8rem;
   }
 
   #contact-form {
