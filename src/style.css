@@ -183,7 +183,7 @@ img {
 }
 
 .dark-mode #goToHomeBtn {
-  background: var(--dark-color);
+  background: var(--bg-dark);
   box-shadow: var(--shadow-dark);
 }
 
@@ -227,6 +227,10 @@ img {
 .dark-mode .skills__name {
   color: var(--white-color);
   box-shadow: var(--shadow-dark);
+}
+
+.dark-mode .skills__img-2 {
+  border: 6px solid var(--bg-dark);
 }
 
 .dark-mode .certificate-gallery img {
