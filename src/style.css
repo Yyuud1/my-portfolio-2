@@ -16,6 +16,7 @@
   --dark-color: #2a3b47;
   --text-color: #697477;
   --shadow: 3px 3px 3px #d0d0d0, -3px -3px 3px #f8f8f8;
+  --transition-speed: 0.5s;
 }
 
 :root {
@@ -113,6 +114,8 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   background: var(--bg-color);
+  transition: background-color var(--transition-speed) ease,
+    color var(--transition-speed) ease;
 }
 h1,
 h2,
@@ -144,6 +147,15 @@ img {
   color: var(--text-dark);
 }
 
+.dark-mode .l-header {
+  background: var(--bg-dark);
+  box-shadow: var(--shadow-dark);
+}
+
+.dark-mode .home {
+  background: var(--bg-dark);
+}
+
 .dark-mode .home::after {
   content: "";
   display: block;
@@ -153,12 +165,7 @@ img {
   right: 0;
   width: 100%;
   height: 5%;
-  background: linear-gradient(
-    0deg,
-    var(--bg-dark) 10%,
-    rgba(10, 10, 20, 0.5) 20%,
-    rgba(10, 10, 20, 0)
-  );
+  background: linear-gradient(0deg, var(--bg-dark) 10%);
 }
 
 .dark-mode .about__social-icon {
@@ -177,16 +184,40 @@ img {
   color: var(--white-color);
 }
 
-.dark-mode .skills__name,
-.dark-mode .filter-btn {
-  color: var(--dark-color);
+.dark-mode .skills__name {
+  color: var(--white-color);
   box-shadow: var(--shadow-dark);
 }
 
-/* Style toggle button */
+.dark-mode .certificate-gallery img {
+  box-shadow: var(--shadow-dark);
+}
+
+.dark-mode .filter-btn {
+  box-shadow: var(--shadow-dark);
+  color: var(--dark-color);
+}
+
+.dark-mode #contact-form {
+  background: var(--bg-dark);
+  box-shadow: var(--shadow-dark);
+}
+
 .dark-mode-toggle {
   cursor: pointer;
   font-size: 1.5rem;
+}
+
+.section-title,
+.about__subtitle,
+.skills__name,
+.filter-btn {
+  transition: color var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+}
+
+.dark-mode .footer {
+  background: #131322;
 }
 
 /*===== CLASS CSS ===== */
@@ -275,10 +306,12 @@ img {
   #contact-form textarea {
     font-size: 14px;
     padding: 10px;
+    font-family: "Poppins", sans-serif;
   }
 
   #contact-form button {
     font-size: 14px;
+    font-family: "Poppins", sans-serif;
     padding: 10px;
   }
 }
@@ -301,6 +334,7 @@ img {
   color: var(--white-color);
   font-size: 1.5rem;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
 /*=== Show menu ===*/
@@ -325,6 +359,7 @@ img {
   position: relative;
   background-color: var(--first-color);
   overflow: hidden;
+  transition: background-color var(--transition-speed) ease;
 }
 
 .home::after {
@@ -341,6 +376,7 @@ img {
     rgb(240, 240, 241) 3%,
     rgba(228, 222, 222, 0) 25%
   );
+  transition: background var(--transition-speed) ease;
 }
 
 .home__container {
@@ -473,7 +509,6 @@ img {
   font-size: 1rem;
   margin-right: var(--mb-2);
   margin-bottom: var(--mb-3);
-  background-color: var(--bg-color);
 }
 .skills__name:hover {
   background-color: var(--first-color);
