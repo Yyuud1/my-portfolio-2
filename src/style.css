@@ -795,6 +795,21 @@ img {
 
 .timeline-content {
   border-radius: 5px;
+  position: relative;
+}
+
+.timeline-content .bank-jambi {
+  width: 120px;
+  position: absolute;
+  top: 2rem;
+  right: 0;
+}
+
+.timeline-content .pupr {
+  width: 120px;
+  position: absolute;
+  top: -8px;
+  left: -5px;
 }
 
 .timeline-content h3 {
@@ -1064,6 +1079,19 @@ img {
 
   .timeline-content p {
     font-size: 15px;
+  }
+
+  .timeline-content .bank-jambi {
+    width: 80px;
+    position: absolute;
+    top: 2rem;
+    left: 0;
+  }
+
+  .timeline-content .pupr {
+    width: 80px;
+    position: absolute;
+    top: 5px;
   }
 
   .filter-btn {
